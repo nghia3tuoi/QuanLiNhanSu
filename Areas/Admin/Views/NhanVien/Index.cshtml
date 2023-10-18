@@ -1,0 +1,54 @@
+﻿
+
+@model List<QLNS.Models.NhanVien>
+@{
+    Layout = "_LayoutAdmin";
+}
+@if (Model != null)
+{
+    <div class="">
+        <div class="fs-3">Danh sách nhân viên</div>
+        <table class="table account-table mt-2">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Mã NV</th>
+                    <th class="text-center" scope="col">Image</th>
+                    <th class="text-center" scope="col">Tên NV</th>
+                    <th class="text-center" scope="col">Vị trí</th>
+                    <th class="text-center" scope="col">Công việc</th>
+                    <th class="text-center" scope="col">Trạng thái</th>
+                    <th class="text-center" scope="col">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr class=" align-middle text-center">
+                        <td class="text-center">@i?.MaNv</td>
+                        <td class="text-center">
+                            <img src="~/UpLoadFile/@i?.Image" width="70px" alt="Ảnh nhận diện" />
+                        </td>
+                        <td class="text-center">@i?.FistName @i?.LastName</td>
+                        <td class="text-center">@i?.IdVitriNavigation?.NameVt</td>
+                        <td class="text-center">@i?.IdCongViecNavigation?.NameCv</td>
+                        <td class="text-center">
+                            @if (i?.StatusNhanVien?.Ma == "CV1")
+                            {
+                                <span class="text-success">@i?.StatusNhanVien?.Name</span>
+                            }
+                        </td>
+                        <td class="text-center align-middle">
+                            <span class="p-2"><i class="fa-solid fa-circle-info fs-4 text-warning"></i></span>
+                            <span class="p-2"><i class="fa-solid fa-pencil fs-4 text-success"></i></span>
+                            <span class="p-2"><i class="fa-solid fa-trash fs-4 text-danger"></i></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div>Not found</div>
+}

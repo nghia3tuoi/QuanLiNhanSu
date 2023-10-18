@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/sass/_SlideNavigationRightPartial.cshtml.css",
+    "inputFile": "wwwroot/sass/_SlideNavigationRightPartial.cshtml.scss"
+  },
+  {
+    "outputFile": "Areas/Admin/Views/Account/Index.cshtml.css",
+    "inputFile": "Areas/Admin/Views/Account/Index.cshtml.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/StyleSheet.css",
+    "inputFile": "wwwroot/sass/StyleSheet.scss"
+  }
+]

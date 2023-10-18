@@ -1,0 +1,43 @@
+﻿@model List<QLNS.Areas.Admin.Forms.TaiKhoan>
+@{
+    Layout = "_LayoutAdmin";
+}
+@if (Model != null)
+{
+    <table class="table account-table">
+        <thead>
+            <tr>
+                <th class="text-center" scope="col">Username</th>
+                <th class="text-center" scope="col">Status</th>
+                <th class="text-center" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td class="text-center">@i.Username</td>
+                    <td class="text-center">
+                        @if (i.BlockOutEnd.HasValue)
+                        {
+                            <span class="text-danger">Đang bị khóa</span>
+                        }
+                        else
+                        {
+                            <span class="text-success">Đang hoạt động</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <a><i class="fa-solid fa-lock fs-4 p-2 text-success"></i></a>
+                        <a><i class="fa-solid fa-unlock fs-4 p-2 text-warning"></i></a>
+                        <a><i class="fa-solid fa-trash fs-4 p-2 text-danger"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div>Not found</div>
+}

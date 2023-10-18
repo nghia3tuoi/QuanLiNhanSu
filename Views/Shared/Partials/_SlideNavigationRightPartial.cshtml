@@ -1,0 +1,56 @@
+﻿@model NhanVien;
+@if(Model != null) {
+    <div class="app-right">
+        <div class="close-right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+        </div>
+        <div class="profile-box">
+            <div class="profile-photo-wrapper">
+                <img src="~/image/@Model?.Image" alt="profile">
+            </div>
+            <p class="profile-text text-light">@Model?.FistName @Model?.LastName</p>
+            <p class="profile-text text-light">@Model?.ChuyenNganh</p>
+            <p class="profile-text text-light">@Model?.IdVitriNavigation?.NameVt</p>
+        </div>
+        <div class="app-right-content">
+            <div class="app-right-section">
+                <div class="app-right-section-header">
+                    <h2>Profile</h2>
+                </div>
+                <div class="app-right-section-header">
+                    <h2>About Me</h2>
+                </div>
+                <div class="app-right-section-header">
+                    <h2>Logout</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}else {
+    <div class="app-right">
+        <div class="close-right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+        </div>
+        <div class="profile-box">
+            <div class="profile-photo-wrapper">
+                <img src="" alt="profile">
+            </div>
+            <p class="profile-text"></p>
+        </div>
+        <div class="app-right-content">
+            <div class="app-right-section">
+                <div class="app-right-section-header">
+                    <h2>Profile</h2>
+                </div>
+                <div class="app-right-section-header">
+                    <h2>About Me</h2>
+                </div>
+                <div class="app-right-section-header">
+                    <h2>Logout</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

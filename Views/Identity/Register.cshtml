@@ -1,0 +1,37 @@
+﻿@model QLNS.Forms.RegisterForm;
+@{
+    Layout = "_Layout"; 
+}
+<div>
+    <div class="login-box">
+        <img src="~/logo.svg" />
+        <h2>Register</h2>
+        <form asp-controller="Identity" asp-action="Register" method="post">
+            <div class="user-box">
+                <input asp-for="Username" type="text" name="Username" required="">
+                <label asp-for="Username">Username</label>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="user-box">
+                <input asp-for="Password" type="password" name="Password" required="">
+                <label asp-for="Password">Password</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="user-box">
+                <input asp-for="PasswordAgain" type="password" name="PasswordAgain" required="">
+                <label asp-for="PasswordAgain">Confirm Password</label>
+                <span asp-validation-for="PasswordAgain" class="text-danger"></span>
+            </div>
+            <div class="text-danger">@ViewBag.Success</div>
+            <a>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button type="Submit">Submit</button>
+            </a>
+        </form>
+        <img src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+             class="w-full"
+             alt="Sample image" />
+    </div>
+</div>

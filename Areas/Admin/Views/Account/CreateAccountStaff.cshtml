@@ -1,0 +1,36 @@
+﻿@model QLNS.Forms.RegisterForm
+<div class="create-account">
+    <form method="post" asp-controller="Account" asp-action="CreateAccountStaff">
+        <div class="mb-3">
+            <label asp-for="Username" class="form-label">Mã Nhân Viên</label>
+            <input asp-for="Username" type="text" class="form-control" name="username" required>
+            @if (ViewBag.userExists != null)
+            {
+                <span class="text-danger">@ViewBag.userExists</span>
+            }
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" name="password" required>
+            @if (ViewBag.passwordErr!=null)
+            {
+                <span class="text-danger">@ViewBag.passwordError</span>
+            }
+        </div>
+        <div class="mb-3">
+            <label asp-for="PasswordAgain" class="form-label">Nhập lại mật khẩu</label>
+            <input type="password" class="form-control" name="passwordAgain" required>
+            @if (ViewBag.passwordNoMatch != null)
+            {
+                <span class="text-danger">@(ViewBag.passwordNoMatch)</span>
+            }
+        </div>
+        @if (ViewBag.Success != null)
+        {
+            <span class="text-danger">@(ViewBag.Success)</span>
+        }
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
+        </div>
+    </form>
+</div>

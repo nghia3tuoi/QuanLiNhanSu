@@ -1,0 +1,32 @@
+﻿@model QLNS.Forms.LoginForm;
+@{
+    Layout = "_Layout";
+}
+<div>
+    <div class="login-box">
+        <img src="~/logo.svg" alt="logo-app"/>
+        <h2>Login</h2>
+        <form method="post" asp-controller="Identity" asp-action="Login">
+           
+            <div class="user-box">
+                <input type="text" name="Username" required="">
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="Password" required="">
+                <label>Password</label>
+            </div>
+            <div class="text-danger fs-6">@ViewBag.login</div>
+            <a >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button type="submit">Submit</button>
+            </a>
+        </form>
+        <img src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+             class="w-full"
+             alt="Sample image" />
+    </div>
+</div>
